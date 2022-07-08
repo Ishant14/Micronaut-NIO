@@ -1,11 +1,10 @@
 package com.igaurav;
 
 import io.micronaut.http.HttpRequest;
-import io.micronaut.http.client.RxHttpClient;
 import io.micronaut.runtime.server.EmbeddedServer;
+import io.micronaut.rxjava2.http.client.RxHttpClient;
 import io.reactivex.Observable;
 import io.reactivex.Single;
-import io.reactivex.schedulers.Schedulers;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

@@ -11,19 +11,20 @@ micronaut:
     thread-selection: auto
   http:
     client:
-      event-loop-group: client1
+      event-loop-group: client-loop
       read-timeout: 5m
       timeout: 5m
       max-content-length: '100MB'
       logger-name: mylogger
   executors:
     io:
-      type: cached
+      type: fixed
+      n-threads: 2
   netty:
     event-loops:
       default:
         num-threads: 3
         prefer-native-transport: true
-      client1:
+      client-loop:
         num-threads: 2
         prefer-native-transport: true
