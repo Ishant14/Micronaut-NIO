@@ -1,0 +1,29 @@
+micronaut:
+  application:
+    name: NIO-Sample-App
+  server:
+    port: 9005
+    context-path: /
+    max-request-size: '100MB'
+    multipart:
+      enable: true
+      max-file-size: '100MB'
+    thread-selection: auto
+  http:
+    client:
+      event-loop-group: client1
+      read-timeout: 5m
+      timeout: 5m
+      max-content-length: '100MB'
+      logger-name: mylogger
+  executors:
+    io:
+      type: cached
+  netty:
+    event-loops:
+      default:
+        num-threads: 3
+        prefer-native-transport: true
+      client1:
+        num-threads: 2
+        prefer-native-transport: true
